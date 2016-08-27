@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fizz Buzz</title>
+    <!--
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+    -->
+</head>
+<body>
+    <div class = "main">
+        <p> Fizz Buzz </p>
+        <form action="javascript:;" onsubmit = "print_loop(this.inputBox.value)">
+            <input type = "number" name = "inputBox" 
+                placeholder = "Enter value to be calculated" style="width: 500px">
+            <br><br>
+            <input type = "submit" value = "Run">
+        </form> 
+    </div>
+
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="./src/fizz-buzz.js"></script>
+    <script>
+        function print_loop(num_loop) {
+            $(".main").append("Fizz Buzz modified list: <br>");
+            for (const ret_val of iter( fizz_buzz(num_loop) )) {
+                $(".main").append(ret_val + "<br>");
+                //console.log(ret_val);
+            }
+        }
+/*
+        $(document).ready(function(){
+            $("p").click(function(){
+                $(this).hide();
+            });
+         });
+*/
+    </script>
+</body>
+</html>
