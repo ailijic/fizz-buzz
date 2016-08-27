@@ -24,11 +24,18 @@
     <script>
         function print_loop(num_loop) {
             $(".main").append("Fizz Buzz modified list: <br>");
-            for (const ret_val of iter( fizz_buzz(num_loop) )) {
+            for (var i=1; i<=num_loop; i++) {
+                var ret_val = fizz_buzz(i);
                 $(".main").append(ret_val + "<br>");
                 //console.log(ret_val);
             }
-        }
+        };
+        function* iter( max_val ) {
+            var iter_val = 1;
+            while ( iter_val <= max_val ) {
+                yield fizz_buzz( iter_val );
+            }
+        };
 /*
         $(document).ready(function(){
             $("p").click(function(){
