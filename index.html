@@ -20,14 +20,17 @@
     </div>
 
 	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="./src/fizz-buzz.js"></script>
+    <script src="./src/fizz-buzz.js"></script>
     <script>
         function print_loop(num_loop) {
+            function to_int(val) {
+                return +val;
+            }
+            function is_int(val) {
             $(".main").append("Fizz Buzz modified list: <br>");
             for (var i=1; i<=num_loop; i++) {
                 var ret_val = fizz_buzz(i);
                 $(".main").append(ret_val + "<br>");
-                //console.log(ret_val);
             }
         };
         function* iter( max_val ) {
@@ -36,13 +39,6 @@
                 yield fizz_buzz( iter_val );
             }
         };
-/*
-        $(document).ready(function(){
-            $("p").click(function(){
-                $(this).hide();
-            });
-         });
-*/
     </script>
 </body>
 </html>
